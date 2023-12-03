@@ -92,7 +92,6 @@ defmodule Day02.Part1 do
     end
   end
 
-
   defmodule Mix.Tasks.Day02 do
     use Mix.Task
 
