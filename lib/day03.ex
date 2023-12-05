@@ -1,8 +1,7 @@
 defmodule Day03.Part1 do
   def solve(input) do
-    lines = String.split(input, "\n", trim: true)
-
-    lines
+    input
+    |> String.split("\n", trim: true)
     |> Enum.map(&get_parts/1)
     |> Enum.map(&Enum.sum/1)
     |> Enum.sum()
