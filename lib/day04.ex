@@ -3,6 +3,7 @@ defmodule Day04.Part1 do
     input
     |> String.split("\n", trim: true)
     |> Enum.map(&parse_line/1)
+    |> Enum.sum()
   end
 
   def parse_line(line) do
@@ -19,9 +20,19 @@ defmodule Day04.Part1 do
     winning_number_part = List.first(split_number_part)
     dealt_number_part = List.last(split_number_part)
 
+    list_of_winning_numbers = String.split(winning_number_part, " ", trim: true)
+    list_of_dealt_numbers = String.split(dealt_number_part, " ", trim: true)
+
+    list_of_dealt_numbers_integers = Enum.map(list_of_dealt_numbers, &String.to_integer/1)
+    list_of_winning_numbers_integers = Enum.map(list_of_winning_numbers, &String.to_integer/1)
+
     IO.inspect(index)
-    IO.inspect(winning_number_part)
-    IO.inspect(dealt_number_part)
+    IO.inspect(list_of_winning_numbers)
+    IO.inspect(list_of_winning_numbers_integers)
+    IO.inspect(list_of_dealt_numbers)
+    IO.inspect(list_of_dealt_numbers_integers)
+
+    index
   end
   end
 
